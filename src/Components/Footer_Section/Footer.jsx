@@ -17,6 +17,9 @@ const Footer = () => {
                 <li>
                     <a href="#services" className="footer__link">Services</a>
                 </li>
+                <li>
+                    <a href="#contact" className="footer__link">Contact</a>
+                </li>
             </ul>
 
             <div className="footer__social">
