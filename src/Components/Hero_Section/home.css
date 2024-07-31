@@ -27,6 +27,7 @@
 .home__social-icon{
     font-size: 1.8rem;
     color: var(--title-color);
+    
 }
 .home__social-icon:hover{
     color: var(--title-color-dark);
@@ -35,6 +36,9 @@
 .home__title{
     font-size: var(--big-font-size);
     margin-bottom: var(--mb-0-25);
+    background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 90%);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 .home__hand{
     width: 38px;

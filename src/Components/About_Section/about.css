@@ -1,3 +1,14 @@
+.about{
+    background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 90%);
+    border-radius: 500px 0% 450px 0%;
+}
+.section{
+    padding: 4rem 0 4rem;
+}
+.section__title{
+    color: var(--title-color);
+}
+
 .about__container{
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -35,6 +46,7 @@
 .about__description{
     padding: 0 4rem 0 0;
     margin-bottom: var(--mb-2-5);
+    color: black;
 }
 
 
@@ -71,6 +83,10 @@
     }
     .about__description{
         padding: 0;
+    }
+    .about{
+        /* background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 90%); */
+        border-radius: 200px 0% 200px 0%;
     }
   }
   

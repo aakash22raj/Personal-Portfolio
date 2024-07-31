@@ -169,7 +169,10 @@ img {
 
 .section__title {
   font-size: var(--h1-font-size);
-  color: var(--title-color);
+  /* color: var(--title-color); */
+  background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 60%);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .section__subtitle {

@@ -1,6 +1,30 @@
-import React from 'react'
+// import React from 'react'
+import React, { useEffect, useRef } from 'react';
+import Typed from 'typed.js';
 
 const Data = () => {
+
+    const typedElement = useRef(null);
+  
+    useEffect(() => {
+      const options = {
+        strings: ["Web Developer", "Frontend Developer", "Backend Developer"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true,
+      };
+  
+      const typed = new Typed(typedElement.current, options);
+  
+      return () => {
+        // Destroy Typed instance during cleanup to stop animation
+        typed.destroy();
+      };
+    }, []);
+
+
+
   return (
     <div className='home__data'>
         <h1 className="home__title">Akash Kumar Raj
@@ -55,7 +79,9 @@ const Data = () => {
             </svg>     */}
         </h1>
 
-        <h3 className="home__subtitle">Web Developer</h3>
+        <h3 className="home__subtitle">
+          <span id="text" ref={typedElement}></span>
+        </h3>
         <p className="home__description">
             I'm creative web developer based on Front-end and Back-end, and I'm passionate and dedicated to my work.
         </p>

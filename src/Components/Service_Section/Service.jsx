@@ -138,7 +138,6 @@ const Service = () => {
 
 
 
-
             <div className="services__content">
                 <div>
                     <i className="uil uil-edit services__icon"></i>
