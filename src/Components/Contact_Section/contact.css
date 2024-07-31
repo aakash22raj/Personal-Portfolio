@@ -92,6 +92,7 @@
     top: -0.75rem;
     left: 1.25rem;
     font-size: var(--smaller-font-size);
+    font-weight: 700;
     padding: 0.25rem;
     background-color: var(--body-color);
     z-index: 10;

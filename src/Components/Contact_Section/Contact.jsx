@@ -12,10 +12,15 @@ const Contact = () => {
             .sendForm(
                 'service_wayd62q', 
                 'template_66ytmxg', 
-                form.current, {
-                    publicKey: 'n_oiZb4nCtye8cbev',
+                form.current, 
+                    'n_oiZb4nCtye8cbev'
+                ).then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
                 }
-            )
+            );
+            
             e.target.reset()
     };
 
@@ -72,6 +77,7 @@ const Contact = () => {
                             name='name'
                             className='contact__form-input'
                             placeholder='Enter Your name' 
+                            required
                         />
                     </div>
 
@@ -82,6 +88,7 @@ const Contact = () => {
                             name='email'
                             className='contact__form-input'
                             placeholder='Enter Your email' 
+                            required
                         />
                     </div>
 
@@ -92,7 +99,8 @@ const Contact = () => {
                             cols="30" 
                             rows="10" 
                             className='contact__form-input' 
-                            placeholder='Drop the message'>
+                            placeholder='Drop the message' 
+                            required>
                         </textarea>
                     </div>
 
