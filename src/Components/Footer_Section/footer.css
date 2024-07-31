@@ -78,10 +78,15 @@
   }
   
   @media screen and (max-width: 576px) {
+    .footer{
+        border-top-left-radius: 125px;
+    }
   }
   
   /* For small devices */
   @media screen and (max-width: 350px) {
-    
+    .footer{
+        border-top-left-radius: 125px;
+    }
   }
     
