@@ -7,7 +7,7 @@ import ParticlesComponent from '../Particles/particles';
 
 const Home = () => {
   return (  
-    <div>
+    <div className='home__bg'>
       <ParticlesComponent  id="partiicles"/>
       <section className="home section" id="home">
           <div className="home__container container grid">
