@@ -36,8 +36,7 @@
 
 .projects__button{
     display: flex;
-    column-gap: 5.5rem;
-    justify-content: center;
+    justify-content: space-between;
     
 }
 .projects__live,
@@ -69,30 +68,6 @@
     .projects__card{
         padding: 1.25rem 1.5rem;
     }
-    .projects__button{
-        column-gap: 1.5rem;
-    }
-  }
+}
   
-  /* For medium devices */
-  @media screen and (max-width: 768px) {
-    .projects__button{
-        column-gap: 5rem;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    .projects__button{
-        column-gap: 7rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-  }
-  
-  /* For small devices */
-  @media screen and (max-width: 350px) {
-    .projects__button{
-        column-gap: 3rem;
-    }
-  }
     
