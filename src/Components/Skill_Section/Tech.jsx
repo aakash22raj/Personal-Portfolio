@@ -1,87 +1,68 @@
-import React from 'react'
-import c_lang from "../../assets/c_lang.png";
+import React from 'react';
+import {
+  SiC,
+  SiCplusplus,
+  SiPython,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiFigma,
+  SiCanva,
+  SiNextdotjs,
+} from 'react-icons/si';
 
-const Tech = () => {
-  return (
-    <div className="tech__info grid">
 
-        <div className="tech__box">
-            <img src={c_lang} alt="" className='tech__img'/>
-            <h3 className="about__title">C language</h3>
+
+const techs = [
+  { icon: <SiC />, label: 'C language', color: '#A8B9CC' },
+  { icon: <SiCplusplus />, label: 'C++', color: '#00599C' },
+  { icon: <SiPython />, label: 'Python', color: '#3776AB' },
+  { icon: <SiJavascript />, label: 'JavaScript', color: '#F7DF1E' },
+  { icon: <SiHtml5 />, label: 'HTML', color: '#E34F26' },
+  { icon: <SiCss3 />, label: 'CSS', color: '#1572B6' },
+  { icon: <SiTailwindcss />, label: 'Tailwind CSS', color: '#38BDF8' },
+  { icon: <SiReact />, label: 'ReactJS', color: '#61DAFB' },
+  { icon: <SiNextdotjs />, label: 'Next.js', color: '#000000' },
+  { icon: <SiNodedotjs />, label: 'NodeJS', color: '#339933' },
+  { icon: <SiExpress />, label: 'ExpressJS', color: '#000000' },
+  { icon: <SiMongodb />, label: 'MongoDB', color: '#47A248' },
+  { icon: <SiGit />, label: 'Git', color: '#F05032' },
+  { icon: <SiGithub />, label: 'GitHub', color: '#181717' },
+  { icon: <SiFigma />, label: 'Figma', color: '#F24E1E' },
+  { icon: <SiCanva />, label: 'Canva', color: '#00C4CC' },
+];
+
+
+
+const Tech = () => (
+  <div className="tech__info grid">
+    {techs.map((tech, index) => (
+      <div className="tech__box group" key={index} style={{ '--hover-color': tech.color }}>
+        <div className="tech__icon group-hover:scale-110"
+            style={{
+                transition: '0.3s ease',
+                color: tech.color,
+            }}
+        >
+          {React.cloneElement(tech.icon, {
+            className: 'icon',
+            style: {
+                color: tech.color,
+                transition: 'color 0.3s ease',
+            },
+          })}
         </div>
+        <h3 className="about__title">{tech.label}</h3>
+      </div>
+    ))}
+  </div>
+);
 
-        <div className="tech__box">
-            <i className='bx bxl-c-plus-plus tech__lang'></i>
-            <h3 className="about__title">C++</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-python tech__lang'></i>
-            <h3 className="about__title">Python</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-javascript tech__lang'></i>
-            <h3 className="about__title">JavaScript</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-html5 tech__lang'></i>
-            <h3 className="about__title">HTML</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-css3 tech__lang'></i>
-            <h3 className="about__title">CSS</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-tailwind-css tech__icon'></i>
-            <h3 className="about__title">Tailwind-css</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-react tech__icon'></i>
-            <h3 className="about__title">ReactJS</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-nodejs tech__icon'></i>
-            <h3 className="about__title">NodeJS</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-edge tech__icon'></i>
-            <h3 className="about__title">ExpressJS</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-mongodb tech__icon'></i>
-            <h3 className="about__title">MongoDB</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-git tech__icon'></i>
-            <h3 className="about__title">Git</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-github tech__icon'></i>
-            <h3 className="about__title">GotHub</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxl-figma tech__icon'></i>
-            <h3 className="about__title">Figma</h3>
-        </div>
-
-        <div className="tech__box">
-            <i class='bx bxs-copyright tech__icon'></i>
-            <h3 className="about__title">Canva</h3>
-        </div>
-
-    </div>
-  )
-}
-
-export default Tech
+export default Tech;

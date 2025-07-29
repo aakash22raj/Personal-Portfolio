@@ -10,7 +10,7 @@ const Contact = () => {
     
         emailjs
             .sendForm(
-                'service_wayd62q', 
+                'service_wayd62q',
                 'template_66ytmxg', 
                 form.current, 
                     'n_oiZb4nCtye8cbev'
@@ -21,8 +21,10 @@ const Contact = () => {
                 }
             );
             
-            e.target.reset()
+        e.target.reset()
     };
+
+
 
 
   return (
@@ -35,35 +37,46 @@ const Contact = () => {
                 <h3 className="contact__title">Talk to me</h3>
 
                 <div className="contact__info">
-                    <div className="contact__card">
-                        <i className="bx bx-mail-send contact__card-icon"></i>
-
+                    <a href="mailto:aakashrajgic@gmail.com" className="contact__card" target="_blank" rel="noopener noreferrer">
+                        <i 
+                            className="bx bx-mail-send contact__card-icon" 
+                            style={{
+                                color: '#ef4444',
+                                textShadow: `0 0 10px ${'#ef4444'}, 0 0 20px ${'#ef4444'}`
+                            }}
+                        ></i>
                         <h3 className="contact__card-title">Email</h3>
-                        {/* <span className="contact__card-data">aakashrajgic@gmail.com</span> */}
-
-                        <a href="#hire" className="contact__button">Write me <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
-                    </div>
+                        <span className="contact__button">Write me <i className="bx bx-right-arrow-alt contact__button-icon"></i></span>
+                    </a>
 
                     <div className="contact__card">
-                        <i className="bx bxl-whatsapp contact__card-icon"></i>
-
+                        <i 
+                            className="bx bxl-whatsapp contact__card-icon" 
+                            style={{
+                                color: '#22c55e',
+                                textShadow: `0 0 10px ${'#22c55e'}, 0 0 20px ${'#22c55e'}`
+                            }}
+                        ></i>
                         <h3 className="contact__card-title">Whatsapp</h3>
-                        {/* <span className="contact__card-data">999-888-7777</span> */}
-
                         <a href="#hire" className="contact__button">Write me <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
                     </div>
 
                     <div className="contact__card">
-                        <i className="bx bx-message-square-dots contact__card-icon"></i>
-
-                        <h3 className="contact__card-title">Message</h3>
-                        <span className="contact__card-data">Linkdin</span>
-
+                        <i 
+                            className="bx bx-message-square-dots contact__card-icon" 
+                            style={{
+                                color: '#0a66c2',
+                                textShadow: `0 0 10px ${'#0a66c2'}, 0 0 20px ${'#0a66c2'}`
+                            }}
+                        ></i>
+                        <h3 className="contact__card-title">Connect on Linkdin</h3>
                         <a href="https://www.linkedin.com/in/aakash22raj" className="contact__button">Write me <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
                     </div>
                 </div>
             </div>
 
+
+            {/* Input form */}
             <div className="contact__content" id='hire'>
                 <h3 className="contact__title">
                     Hire me

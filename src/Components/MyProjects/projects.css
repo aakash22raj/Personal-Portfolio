@@ -20,10 +20,20 @@
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
     margin-bottom: var(--mb-0-25);
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .projects__description{
     font-size: var(--small-font-size);
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .swiper-pagination-bullet{
@@ -34,26 +44,25 @@
 }
 
 
+
 .projects__button{
-    display: flex;
-    justify-content: space-between;
-    
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+    display: inline-flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+    column-gap: 0.25rem;
+    cursor: pointer;
+    margin-top: var(--mb-1);
 }
-.projects__live,
-.projects__git{
-    display: inline-block;
-    background-color: var(--title-color);
-    color: var(--container-color);
-    padding: .6rem 1.2rem;
-    border-radius: .7rem;
-    font-weight: var(--font-medium);
-    margin-top: 1rem;
+
+.projects__button-icon{
+    font-size: 1rem;
+    transition: 0.3s;
 }
-.projects__live:hover {
-    background-color: var(--title-color-dark);
-}
-.projects__git:hover {
-    background-color: var(--title-color-dark);
+
+.projects__button:hover .projects__button-icon{
+    transform: translateX(00.25rem);
 }
 
 

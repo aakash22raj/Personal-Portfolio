@@ -1,76 +1,76 @@
-.tech__img{
-    width: 1.4rem;
-    height: 1.5rem;
-    margin-bottom: var(--mb-0-5);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.tech__info {
+  display: grid;
+  grid-template-columns: repeat(8, 110px);
+  gap: .7rem;
+  justify-content: center;
+  margin-bottom: var(--mb-2);
 }
-.tech__lang{
-    font-size: 1.77rem;
-    color: black;
-    margin-bottom: var(--mb-0-5);
+
+.tech__box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(97, 89, 89, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  padding: 1rem .5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.tech__info{
-    grid-template-columns: repeat(8, 110px);
-    gap: 0.5rem;
-    margin-bottom: var(--mb-2);
-    justify-content: center;
+
+/* GLOW on hover */
+.tech__box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
-.tech__icon{
-    font-size: 1.5rem;
-    color: var(--title-color);
-    margin-bottom: var(--mb-0-5);
+
+.tech__icon .icon {
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  color: var(--title-color); 
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.tech__box{
-    background-color: var(--container-color);
-    border: 1px solid black;
-    border-radius: 0.75rem;
-    text-align: center;
-    padding: 1rem .5rem;
-}
-.about__title{
-    font-size: var(--small-font-size);
-    font-weight: var(--font-medium);
+
+.tech__box:hover .icon {
+  color: var(--hover-color);
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px var(--hover-color));
 }
 
 
+.about__title {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+}
 
-/*=============== BREAKPOINTS ===============*/
-/* For large devices */
+/* Responsive Breakpoints */
 @media screen and (max-width: 992px) {
-    .tech__info{
-        grid-template-columns: repeat(5, 100px);
-        gap: 0.5rem;
-        margin-bottom: var(--mb-2);
-        justify-content: center;
-    }
-    .tech__box{
-        padding: 1rem 0.5rem;
-    }
-    .tech__data{
-        text-align: center;
-    }
+  .tech__info {
+    grid-template-columns: repeat(5, 100px);
   }
-  
-  /* For medium devices */  
-  @media screen and (max-width: 768px) {
-    .tech__info{
-        grid-template-columns: repeat(4, 100px);
-        justify-content: center;
-    }
-   }
+}
 
-  @media screen and (max-width: 576px) {
-    .tech__info{
-        grid-template-columns: repeat(3, 100px);
-        justify-content: center;
-    }
+@media screen and (max-width: 768px) {
+  .tech__info {
+    grid-template-columns: repeat(4, 100px);
   }
-  
-  /* For small devices */
-  @media screen and (max-width: 350px) {
-    .tech__info{
-        grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+@media screen and (max-width: 576px) {
+  .tech__info {
+    grid-template-columns: repeat(3, 100px);
   }
+}
+
+@media screen and (max-width: 350px) {
+  .tech__info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,147 @@
+.project-detail__grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 4rem;
+}
+
+.project-detail__images {
+  flex: 1 1 300px;
+  max-width: 30rem;
+  margin-top: .5rem;
+}
+
+.project-detail__main-img {
+  width: 100%;
+  border-radius: .8rem;
+  border: 1px solid var(--title-color);
+  margin-bottom: var(--mb-1-5);
+}
+
+.project-detail__thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+.project-detail__thumb {
+  flex: 1;
+  max-width: 30%;
+  border-radius: .5rem;
+  border: 1px solid var(--text-color);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+
+.project-detail__thumb:hover {
+  opacity: 1;
+}
+
+.project-detail__thumb.active-thumb {
+  border-color: #3b82f6; 
+  opacity: 1;
+}
+
+
+
+
+.project-detail__content {
+  flex: 1 1 350px;
+}
+
+.section__title{
+    font-size: var(--h2-font-size);
+}
+.project-title{
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project-detail__description {
+  margin: var(--mb-1) 0;
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.project-detail__stack {
+  margin-bottom: var(--mb-2);
+}
+
+.tech__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--mb-0-5);
+  color: var(--title-color-dark);
+}
+
+.tech__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mb-0-5);
+}
+
+.tech__item {
+  background-color: var(--container-color);
+  border: 1px solid var(--text-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.6rem;
+  font-size: var(--small-font-size);
+  color: var(--title-color-dark);
+}
+
+.project-detail__buttons {
+  display: flex;
+  gap: var(--mb-1);
+  margin-top: var(--mb-1);
+  margin-bottom: var(--mb-2);
+}
+
+.project-button{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.project-button i{
+    font-size: var(--h3-font-size);
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .project-detail__grid {
+    flex-direction: column;
+    padding-top: .5rem;
+  }
+
+  .project-detail__thumbs {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 450px) {
+    .project-detail__grid {
+      gap: .1rem;
+    }
+
+    .project-detail__thumb {
+      max-width: 32%;
+    }
+
+    .project-detail__buttons {
+      align-items: flex-start;
+    }
+
+    .project-detail__description {
+      font-size: var(--small-font-size);
+    }
+}

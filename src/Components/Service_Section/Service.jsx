@@ -8,6 +8,50 @@ const Service = () => {
         setToggleState(index);
     }
 
+
+    const services = [
+        {
+            id: 1,
+            icon: 'uil uil-web-grid',
+            color: '#4158d0',
+            title: 'Web Developer',
+            description: 'I am working on web developer before 3 years. and I have gain lot experience.',
+            points: [
+                'Front-end developer',
+                'Back-end developer',
+                'I create the MERN stack projects',
+                'Develop the web products for companies'
+            ]
+        },
+        {
+            id: 2,
+            icon: 'uil uil-arrow',
+            color: '#c850c0',
+            title: 'UX/UI Designer',
+            description: 'I am designing user friendly interface for good experience.',
+            points: [
+                'User friendly interface',
+                'With good animation',
+                'I create UX element interaction',
+                'Design and mockups of products for companies'
+            ]
+        },
+        {
+            id: 3,
+            icon: 'uil uil-edit',
+            color: '#ffcc70',
+            title: 'Video Creation',
+            description: 'I am creating videos(Reel) for the instagram and other social media account.',
+            points: [
+                'Video Editing',
+                'Logo and Template Design',
+                'Content writing for video',
+                'Content based video creation'
+            ]
+        }
+    ];
+
+
   return (
     <section className="service section" id="services">
         <h2 className="section__title">Services</h2>
@@ -15,186 +59,59 @@ const Service = () => {
 
         <div className="services__container container grid">
 
-            <div className="services__content">
-                <div>
-                    <i className="uil uil-web-grid services__icon"></i>
-                    <h3 className="services__title">
-                        Web <br/> Developer
-                    </h3>
-                </div>
-
-                <span className="services__button" onClick={() => toggleTab(1)}>
-                    View More
-                    <i className="uil uil-arrow-right services__button-icon"></i>
-                </span>
-
-                <div className={toggleState === 1 ? "services__model active-model" : "services__model"}>
-                    <div className="services__model-content">
-                        <i onClick={() => toggleTab(0)} className="uil uil-times services__model-close"></i>
-
-                        <h3 className="services__model-title">
-                            Web Developer
+            {services.map((service) => (
+                <div className="services__content" key={service.id}>
+                    <div>
+                        <i
+                            className={`${service.icon} services__icon`}
+                            // style={{ color: service.color }}
+                            style={{
+                                color: service.color,
+                                textShadow: `0 0 10px ${service.color}, 0 0 20px ${service.color}`
+                            }}
+                        ></i>
+                        <h3 className="services__title">
+                            {service.title.split(' ')[0]} <br/> {service.title.split(' ')[1]}
                         </h3>
-                        <p className="services__model-description">
-                            I am working on web developer before 3 years. and I have gain lot experience.
-                        </p>
+                    </div>
+    
+                    <span className="services__button" onClick={() => toggleTab(service.id)} style={{ color: service.color }}>
+                        View More
+                        <i className="uil uil-arrow-right services__button-icon"></i>
+                    </span>
+    
 
-                        <ul className="services__model-services grid">
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    Front-end developer
-                                </p>
-                            </li>
-
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    Back-end developer
-                                </p>
-                            </li>
-
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    I create the MERN stack projects
-                                </p>
-                            </li>
-
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    Develop the web products for companies
-                                </p>
-                            </li>
-                        </ul>
-
+                    {/* Toggle section */}
+                    <div className={toggleState === service.id ? "services__model active-model" : "services__model"}>
+                        <div className="services__model-content">
+                            
+                            <i onClick={() => toggleTab(0)} className="uil uil-times services__model-close"></i>
+    
+                            <h3 className="services__model-title">
+                                {service.title}
+                            </h3>
+                            <p className="services__model-description">
+                                {service.description}
+                            </p>
+    
+                            <ul className="services__model-services grid">
+                                {service.points.map((point, index) => (
+                                    <li className="services__model-service" key={index}>
+                                        <i 
+                                            className="uil uil-check-circle services__model-icon"
+                                            style={{ color: service.color }}
+                                        ></i>
+                                        <p className="services__model-info">
+                                            {point}
+                                        </p>
+                                    </li>
+                                ))}
+                            </ul>
+    
+                        </div>
                     </div>
                 </div>
-            </div>
-
-
-
-
-
-            <div className="services__content">
-                <div>
-                    <i className="uil uil-arrow services__icon"></i>
-                    <h3 className="services__title">
-                        UX/UI <br/> Designer
-                    </h3>
-                </div>
-
-                <span className="services__button" onClick={() => toggleTab(2)}>
-                    View More
-                    <i className="uil uil-arrow-right services__button-icon"></i>
-                </span>
-
-                <div className={toggleState === 2 ? "services__model active-model" : "services__model"}>
-                    <div className="services__model-content">
-                        <i onClick={() => toggleTab(0)} className="uil uil-times services__model-close"></i>
-
-                        <h3 className="services__model-title">
-                            UX/UI Designer
-                        </h3>
-                        <p className="services__model-description">
-                            I am designing user frendaly interface for good experience.
-                        </p>
-
-                        <ul className="services__model-services grid">
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    User frendaly interface
-                                </p>
-                            </li>
-
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    With good animation
-                                </p>
-                            </li>
-
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    I create UX element interaction
-                                </p>
-                            </li>
-
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    Design and mockups of products for companies
-                                </p>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-
-
-
-
-            <div className="services__content">
-                <div>
-                    <i className="uil uil-edit services__icon"></i>
-                    <h3 className="services__title">
-                        Video <br/> Creation
-                    </h3>
-                </div>
-
-                <span onClick={() => toggleTab(3)} className="services__button">
-                    View More
-                    <i className="uil uil-arrow-right services__button-icon"></i>
-                </span>
-
-                <div className={toggleState === 3 ? "services__model active-model" : "services__model"}>
-                    <div className="services__model-content">
-                        <i onClick={() => toggleTab(0)} className="uil uil-times services__model-close"></i>
-
-                        <h3 className="services__model-title">
-                            Video Creation
-                        </h3>
-                        <p className="services__model-description">
-                            I am creating videos(Reel) for the instagram and other social media account. 
-                        </p>
-
-                        <ul className="services__model-services grid">
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    Video Editing
-                                </p>
-                            </li>
-
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    Logo and Template Design
-                                </p>
-                            </li>
-
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    Contant writing for video
-                                </p>
-                            </li>
-
-                            <li className="services__model-service">
-                                <i className="uil uil-check-circle services__model-icon"></i>
-                                <p className="services__model-info">
-                                    Contant based video creation
-                                </p>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
+            ))}
 
         </div>
     </section>
