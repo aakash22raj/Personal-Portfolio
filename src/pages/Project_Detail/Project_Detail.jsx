@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import './Project_Detail.css';
 import { Data } from '../../Components/MyProjects/Data';
-import Projects from '../../Components/MyProjects/Projects';
+// import Projects from '../../Components/MyProjects/Projects';
 import { LuSend } from "react-icons/lu";
 import { useState } from 'react';
 

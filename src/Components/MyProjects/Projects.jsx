@@ -20,7 +20,7 @@ import { useNavigate } from 'react-router-dom';
 const Projects = () => {
 
     const navigate = useNavigate();
-    console.log(Data);
+    // console.log(Data);
 
 
   return (
